@@ -1,9 +1,9 @@
 import React from 'react'
 
-function checkout() {
+function Checkout() {
   return (
     <div>checkout</div>
   )
 }
 
-export default checkout
+export default Checkout

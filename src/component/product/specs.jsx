@@ -1,9 +1,9 @@
 import React from 'react'
 
-function specs() {
+function Specs() {
   return (
     <div>specs</div>
   )
 }
 
-export default specs
+export default Specs

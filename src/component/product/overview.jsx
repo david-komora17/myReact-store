@@ -1,9 +1,9 @@
 import React from 'react'
 
-function overview() {
+function Overview() {
   return (
     <div>overview</div>
   )
 }
 
-export default overview
+export default Overview
