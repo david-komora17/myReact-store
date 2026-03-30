@@ -9,6 +9,7 @@ import list from './component/list';
 import navbar from './component/navbar';
 import search from './component/search';
 import login from './component/login';
+
 //Nested routing 
 import overview from './component/product/overview';
 import reviews from './component/product/reviews';
@@ -17,13 +18,19 @@ import specs from './component/product/specs';
 function App() {
   return (
     <BrowserRouter>
-        <routes>
-          <route path ='/' element = {<home/>}/>
-          <route path ='/login' element = {<login/>}/>
-          <route path ='/products' element = {<list/>}/>
-          <route path ='/cart' element = {<cart/>}/>
-          <route path ='/checkout' element = {<checkout/>}/>
-        </routes>
+        <Routes>
+          <Route path ='/' element = {<home/>}/>
+          <Route path ='/login' element = {<login/>}/>
+          <Route path ='/products' element = {<list/>}/>
+          <Route path ='/cart' element = {<cart/>}/>
+          <Route path ='/checkout' element = {<checkout/>}/>
+          
+          <Route path = 'products/:id' element = {<details/>}>
+            <Route index element = {<overview/>}/>
+            <Route path = 'reviews' element = {<reviews/>}/>
+            <Route path = 'specs' element = {<specs/>}/>
+          </Route>  
+        </Routes>
     </BrowserRouter>
   )
 }
