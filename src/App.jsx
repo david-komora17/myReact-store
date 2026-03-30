@@ -8,11 +8,15 @@ import list from './component/list';
 import navbar from './component/navbar';
 import search from './component/search';
 import login from './component/login';
+//Nested routing 
+import overview from './component/product/overview';
+import reviews from './component/product/reviews';
+import specs from './component/product/specs';
 
 function App() {
   return (
     <>
-      <h1>The react Shopping mall!</h1>
+      <h1>The React Shopping Mall!</h1>
       <hr />
     </>
   )
