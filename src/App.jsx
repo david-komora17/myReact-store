@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import home from './component/home';
 import card from './component/card';
 import cart from './component/cart';
 import checkout from './component/checkout';
@@ -15,10 +16,15 @@ import specs from './component/product/specs';
 
 function App() {
   return (
-    <>
-      <h1>The React Shopping Mall!</h1>
-      <hr />
-    </>
+    <BrowserRouter>
+        <routes>
+          <route path ='/' element = {<home/>}/>
+          <route path ='/login' element = {<login/>}/>
+          <route path ='/products' element = {<list/>}/>
+          <route path ='/cart' element = {<cart/>}/>
+          <route path ='/checkout' element = {<checkout/>}/>
+        </routes>
+    </BrowserRouter>
   )
 }
 
