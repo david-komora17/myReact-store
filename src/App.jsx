@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './component/home';
 import Card from './component/card';
-import Cart from './component/cart';
+import { CartProvider } from './component/cart';
 import Checkout from './component/checkout';
 import Details from './component/details';
 import List from './component/list';
@@ -18,7 +18,8 @@ import Specs from './component/product/specs';
 
 function App() {
   return (
-    <BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
         <Navbar/>
         <Routes>
           <Route path ='/' element = {<Home/>}/>
@@ -34,6 +35,7 @@ function App() {
           </Route>  
         </Routes>
     </BrowserRouter>
+    </CartProvider>
   )
 }
 

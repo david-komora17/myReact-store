@@ -1,11 +1,15 @@
-import React from 'react'
-import { CartProvider } from './component/cart.jsx'
-import Card from './card.jsx'
-import { CartContext } from './cart.jsx'
+import React, { useContext } from 'react' // Added useContext here
+import { CartProvider } from './cart'
+import Card from './card'
+import { CartContext } from './cart'
+
 
 
 function Home() {
     const {products} = useContext(CartContext)
+      
+    if (!products) return <div>Loading...</div>;
+
   return (
     <div className="p-8">
       <h1 className="text-3xl font-bold mb-6">Featured Products</h1>

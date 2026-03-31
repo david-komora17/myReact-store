@@ -10,8 +10,10 @@ export const CartProvider = ({ children }) => {
 
   // Fetch real products from an API
   useEffect(() => {
-    fetch('https://fakestoreapi.com')
-      .then(res => res.json())
+    fetch('https://fakestoreapi.com/products')
+      .then((res) => {
+        if (!res.ok)throw new Error('Failed to fetch products');
+        return res.json()})
       .then(data => setProducts(data));
   }, []);
 
